@@ -4,540 +4,695 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AGI — Artist Growth Intensive</title>
-<meta name="description" content="I'll look at your music career and tell you what I'd do next. A personalized strategy intensive for serious independent artists.">
+<meta name="description" content="A private, personalized strategy intensive for independent artists. Direct access, one time, ₦99,700.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,480;0,9..144,560;1,9..144,420&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --black:      #0b0a08;
-    --panel:      #131110;
-    --hair:       #2b2620;
-    --gold:       #b8912f;
-    --gold-bright:#d9b463;
-    --bone:       #f2ede1;
-    --bone-dim:   #b8b0a0;
-    --bone-faint: #726c5f;
-    --red-off:    #8a5a3d;
-    --maxw: 640px;
+    --paper:#F6F3EC;
+    --paper-dim:#EDE8DD;
+    --ink:#15181A;
+    --ink-soft:#1C2022;
+    --text:#22261F;
+    --text-on-ink:#EFEBE1;
+    --muted:#6E695D;
+    --muted-on-ink:#A7A297;
+    --accent:#A5713D;
+    --accent-bright:#BD8148;
+    --line:rgba(34,38,31,0.14);
+    --line-ink:rgba(239,235,225,0.16);
+    --maxw:1120px;
   }
 
-  *{box-sizing:border-box; margin:0; padding:0;}
-
-  html{-webkit-text-size-adjust:100%; scroll-behavior:smooth;}
-
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
   body{
-    background:var(--black);
-    color:var(--bone);
-    font-family:'Inter', -apple-system, sans-serif;
+    margin:0;
+    background:var(--paper);
+    color:var(--text);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    font-size:16px;
     line-height:1.6;
-    font-weight:400;
     -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
   }
-
-  @media (prefers-reduced-motion: reduce){
-    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  h1,h2,h3,.serif{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+    margin:0;
   }
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  ::selection{background:var(--accent);color:var(--paper);}
 
   .wrap{
     max-width:var(--maxw);
     margin:0 auto;
     padding:0 28px;
   }
-
-  h1,h2,h3{
-    font-family:'Fraunces', Georgia, serif;
-    font-weight:480;
-    letter-spacing:-0.01em;
-    color:var(--bone);
+  section{
+    padding:110px 0;
   }
+  .on-ink{background:var(--ink);color:var(--text-on-ink);}
+  .on-ink .muted{color:var(--muted-on-ink);}
+  .muted{color:var(--muted);}
 
-  a{color:inherit; text-decoration:none;}
-
-  /* ---------- top mark ---------- */
+  /* ---------- topbar ---------- */
   .topbar{
-    padding:26px 28px 0;
-    max-width:var(--maxw);
-    margin:0 auto;
+    position:relative;
+    z-index:5;
     display:flex;
     align-items:center;
     justify-content:space-between;
+    padding:26px 28px;
+    max-width:var(--maxw);
+    margin:0 auto;
   }
-  .mark{
-    font-family:'Fraunces', serif;
-    font-style:italic;
-    font-size:15px;
-    color:var(--bone-dim);
-    letter-spacing:0.02em;
+  .topbar .mark{
+    font-family:'Fraunces',serif;
+    font-size:17px;
+    letter-spacing:0.01em;
+    color:var(--text-on-ink);
   }
-  .mark b{color:var(--gold-bright); font-style:normal; font-weight:560;}
-  .clock{
-    font-size:12.5px;
-    color:var(--bone-faint);
-    font-variant-numeric:tabular-nums;
-  }
-  .clock span{color:var(--gold-bright);}
+  .topbar .mark span{color:var(--muted-on-ink);font-family:'Inter',sans-serif;font-size:12px;margin-left:8px;}
 
   /* ---------- hero ---------- */
   .hero{
-    padding:56px 0 40px;
-    opacity:0;
-    transform:translateY(14px);
-    animation:rise 0.9s cubic-bezier(.2,.7,.3,1) 0.15s forwards;
+    padding-top:20px;
+    padding-bottom:100px;
+    position:relative;
   }
-  @keyframes rise{ to{opacity:1; transform:translateY(0);} }
-
+  .hero .note{
+    font-size:14px;
+    color:var(--muted-on-ink);
+    max-width:520px;
+    margin-bottom:36px;
+    padding-bottom:18px;
+    border-bottom:1px solid var(--line-ink);
+  }
   .hero h1{
-    font-size:clamp(34px, 8.6vw, 44px);
+    font-size:clamp(34px,5.4vw,64px);
     line-height:1.08;
-    margin-bottom:22px;
+    color:var(--text-on-ink);
+    max-width:15ch;
   }
-  .hero h1 em{font-style:italic; color:var(--gold-bright); font-weight:420;}
-
+  .hero h1 em{
+    font-style:italic;
+    font-weight:400;
+    color:var(--accent-bright);
+  }
   .hero .sub{
-    font-size:16.5px;
-    color:var(--bone-dim);
+    margin-top:28px;
     max-width:52ch;
-    margin-bottom:34px;
+    font-size:18px;
+    line-height:1.65;
+    color:var(--muted-on-ink);
   }
-
   .price-block{
-    border-top:1px solid var(--hair);
-    border-bottom:1px solid var(--hair);
-    padding:24px 0;
-    margin-bottom:26px;
-  }
-  .price-row{
+    margin-top:52px;
     display:flex;
     align-items:baseline;
-    gap:14px;
+    gap:18px;
     flex-wrap:wrap;
-    margin-bottom:6px;
   }
-  .price-old{
-    font-family:'Fraunces', serif;
+  .price-block .now{
+    font-family:'Fraunces',serif;
+    font-size:42px;
+    color:var(--text-on-ink);
+  }
+  .price-block .was{
     font-size:17px;
-    color:var(--bone-faint);
+    color:var(--muted-on-ink);
     text-decoration:line-through;
-    text-decoration-color:var(--red-off);
-    text-decoration-thickness:1px;
+    text-decoration-color:rgba(167,162,151,0.5);
   }
-  .price-new{
-    font-family:'Fraunces', serif;
-    font-size:clamp(38px, 11vw, 52px);
-    font-weight:480;
-    color:var(--gold-bright);
-    line-height:1;
-  }
-  .price-note{
+  .price-meta{
+    margin-top:10px;
     font-size:13px;
-    color:var(--bone-faint);
+    letter-spacing:0.02em;
+    color:var(--muted-on-ink);
   }
+  .price-meta .dot{margin:0 10px;opacity:0.5;}
 
   .cta{
-    display:block;
-    width:100%;
-    text-align:center;
-    background:var(--gold);
-    color:#141210;
-    font-family:'Inter', sans-serif;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--accent);
+    color:#FBF7EF;
+    font-family:'Inter',sans-serif;
     font-weight:600;
     font-size:15.5px;
-    padding:18px 20px;
+    padding:17px 30px;
+    border-radius:3px;
     border:none;
-    border-radius:2px;
     cursor:pointer;
-    transition:background 0.25s ease, transform 0.15s ease;
-    letter-spacing:0.01em;
+    transition:background .18s ease, transform .18s ease;
   }
-  .cta:hover{background:var(--gold-bright);}
-  .cta:active{transform:scale(0.99);}
-  .cta:focus-visible{outline:2px solid var(--gold-bright); outline-offset:3px;}
-
-  .cta-note{
-    text-align:center;
-    font-size:12.5px;
-    color:var(--bone-faint);
-    margin-top:12px;
+  .cta:hover{background:var(--accent-bright);transform:translateY(-1px);}
+  .cta-row{margin-top:38px;}
+  .cta-micro{
+    margin-top:16px;
+    font-size:13.5px;
+    color:var(--muted-on-ink);
   }
+  .on-paper-cta{background:var(--ink);color:var(--paper);}
+  .on-paper-cta:hover{background:#25292b;}
 
-  /* ---------- section shell ---------- */
-  section{padding:52px 0;}
-  section + section{border-top:1px solid var(--hair);}
-
-  .kicker{
+  /* ---------- bridge ---------- */
+  .bridge{padding:120px 0;}
+  .bridge .grid{
+    display:grid;
+    grid-template-columns:1fr 1.5fr;
+    gap:60px;
+  }
+  .bridge .label{
     font-size:13px;
-    color:var(--gold);
+    color:var(--muted);
+    padding-top:6px;
+  }
+  .bridge h2{
+    font-size:clamp(26px,3.4vw,38px);
+    line-height:1.22;
+    max-width:14ch;
+  }
+  .bridge .body{
+    margin-top:26px;
+    max-width:56ch;
+    font-size:17px;
+    line-height:1.75;
+    color:#3C4038;
+  }
+  .bridge .body p + p{margin-top:16px;}
+  .bridge .pull{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:22px;
+    line-height:1.5;
+    color:var(--accent);
+    margin-top:26px;
+    max-width:42ch;
+  }
+
+  /* ---------- not a course ---------- */
+  .compare h2{
+    font-size:clamp(26px,3.4vw,40px);
+    color:var(--text-on-ink);
+    max-width:12ch;
+  }
+  .compare .intro{
+    margin-top:22px;
+    max-width:58ch;
+    font-size:17px;
+    color:var(--muted-on-ink);
+    line-height:1.75;
+  }
+  .compare .split{
+    margin-top:64px;
+    display:grid;
+    grid-template-columns:1fr 1px 1fr;
+    gap:48px;
+  }
+  .compare .rule{background:var(--line-ink);}
+  .compare .col-label{
+    font-size:12.5px;
+    letter-spacing:0.04em;
+    color:var(--muted-on-ink);
     margin-bottom:14px;
   }
-
-  section h2{
-    font-size:clamp(26px, 7vw, 32px);
-    line-height:1.16;
-    margin-bottom:28px;
-    max-width:20ch;
-  }
-
-  .lede{
-    color:var(--bone-dim);
-    font-size:15.5px;
-    max-width:56ch;
-    margin-bottom:36px;
-  }
-
-  /* ---------- pillars ---------- */
-  .pillar{
-    padding:22px 0;
-    border-top:1px solid var(--hair);
-  }
-  .pillar:last-child{border-bottom:1px solid var(--hair);}
-  .pillar-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:baseline;
-    gap:12px;
-    margin-bottom:8px;
-  }
-  .pillar-name{
-    font-family:'Fraunces', serif;
-    font-size:19px;
-    color:var(--bone);
-  }
-  .pillar-num{
-    font-family:'Fraunces', serif;
-    font-style:italic;
-    font-size:14px;
-    color:var(--bone-faint);
-  }
-  .pillar p{
-    color:var(--bone-dim);
-    font-size:14.5px;
-    max-width:50ch;
-  }
-
-  /* ---------- process ---------- */
-  .step{
-    display:flex;
-    gap:20px;
-    padding:20px 0;
-    border-top:1px solid var(--hair);
-  }
-  .step:last-child{border-bottom:1px solid var(--hair);}
-  .step-num{
-    font-family:'Fraunces', serif;
-    font-style:italic;
+  .compare .col h3{
     font-size:24px;
-    color:var(--gold);
-    min-width:34px;
-    line-height:1.3;
-  }
-  .step-body h3{
-    font-family:'Inter', sans-serif;
-    font-weight:600;
-    font-size:15.5px;
-    color:var(--bone);
-    margin-bottom:5px;
-  }
-  .step-body p{
-    color:var(--bone-dim);
-    font-size:14.5px;
-  }
-
-  /* ---------- fit ---------- */
-  .fit-grid{display:flex; flex-direction:column; gap:44px;}
-  .fit-col .fit-label{
-    font-family:'Fraunces', serif;
+    color:var(--text-on-ink);
+    font-weight:400;
     font-style:italic;
-    font-size:17px;
     margin-bottom:16px;
   }
-  .fit-col.yes .fit-label{color:var(--gold-bright);}
-  .fit-col.no .fit-label{color:var(--bone-faint);}
-  .fit-list{list-style:none;}
-  .fit-list li{
-    padding:11px 0 11px 20px;
-    border-top:1px solid var(--hair);
-    position:relative;
-    font-size:14.5px;
-    color:var(--bone-dim);
-  }
-  .fit-list li:last-child{border-bottom:1px solid var(--hair);}
-  .fit-col.yes .fit-list li::before{
-    content:'';
-    position:absolute; left:0; top:19px;
-    width:6px; height:1px; background:var(--gold);
-  }
-  .fit-col.no .fit-list li::before{
-    content:'';
-    position:absolute; left:0; top:19px;
-    width:6px; height:1px; background:var(--bone-faint);
-  }
-  .fit-col.no li{color:var(--bone-faint);}
-
-  /* ---------- offer / price section ---------- */
-  .offer{
-    background:var(--panel);
-    border-top:1px solid var(--hair);
-    border-bottom:1px solid var(--hair);
-    padding:56px 0;
-    text-align:left;
-  }
-  .offer .wrap{max-width:var(--maxw);}
-  .offer-compare{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    border-bottom:1px solid var(--hair);
-    padding-bottom:24px;
-    margin-bottom:24px;
-  }
-  .offer-compare .col{}
-  .offer-compare .col-label{
-    font-size:12.5px;
-    color:var(--bone-faint);
-    margin-bottom:8px;
-  }
-  .offer-compare .col-value.old{
-    font-family:'Fraunces', serif;
-    font-size:20px;
-    color:var(--bone-faint);
-    text-decoration:line-through;
-    text-decoration-color:var(--red-off);
-  }
-  .offer-compare .col-value.new{
-    font-family:'Fraunces', serif;
-    font-size:clamp(40px, 12vw, 56px);
-    color:var(--gold-bright);
-    line-height:1;
-  }
-  .offer-window{
-    font-size:13.5px;
-    color:var(--bone-dim);
-    margin-bottom:26px;
-  }
-  .offer-window span{color:var(--gold-bright); font-variant-numeric:tabular-nums;}
-
-  /* ---------- final ---------- */
-  .final{text-align:left; padding-bottom:120px;}
-  .final h2{max-width:16ch;}
-  .final p{
-    color:var(--bone-dim);
+  .compare .col.dim h3{color:var(--muted-on-ink);}
+  .compare .col p{
     font-size:15.5px;
-    max-width:48ch;
-    margin-bottom:32px;
+    color:var(--muted-on-ink);
+    line-height:1.7;
   }
-  .final p + p{margin-top:-20px;}
+  .compare .col.strong p{color:var(--text-on-ink);}
+
+  /* ---------- process ---------- */
+  .process h2{
+    font-size:clamp(26px,3.4vw,38px);
+    max-width:12ch;
+  }
+  .process-list{
+    margin-top:64px;
+  }
+  .p-item{
+    display:grid;
+    grid-template-columns:90px 1fr;
+    gap:32px;
+    padding:36px 0;
+    border-top:1px solid var(--line);
+  }
+  .p-item:last-child{border-bottom:1px solid var(--line);}
+  .p-item .num{
+    font-family:'Fraunces',serif;
+    font-size:15px;
+    color:var(--accent);
+    padding-top:4px;
+  }
+  .p-item h3{
+    font-size:22px;
+    font-weight:500;
+    margin-bottom:10px;
+  }
+  .p-item .desc{
+    max-width:56ch;
+    font-size:16px;
+    color:#4A4E44;
+    line-height:1.7;
+  }
+
+  /* ---------- outcomes ---------- */
+  .outcomes h2{
+    font-size:clamp(26px,3.6vw,40px);
+    color:var(--text-on-ink);
+    max-width:16ch;
+    line-height:1.2;
+  }
+  .outcomes .list{
+    margin-top:56px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0 60px;
+  }
+  .o-item{
+    padding:20px 0;
+    border-top:1px solid var(--line-ink);
+    font-size:16.5px;
+    color:var(--text-on-ink);
+  }
+  .o-item:nth-last-child(1),.o-item:nth-last-child(2){border-bottom:1px solid var(--line-ink);}
+
+  /* ---------- who for ---------- */
+  .who h2{
+    font-size:clamp(26px,3.4vw,38px);
+    max-width:15ch;
+  }
+  .who .body{
+    margin-top:50px;
+    max-width:62ch;
+  }
+  .who .line{
+    font-size:18px;
+    line-height:1.7;
+    padding:20px 0;
+    border-top:1px solid var(--line);
+    color:#3C4038;
+  }
+  .who .line:last-of-type{border-bottom:1px solid var(--line);}
+  .who .close{
+    margin-top:34px;
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:20px;
+    color:var(--accent);
+    max-width:44ch;
+  }
+
+  /* ---------- offer ---------- */
+  .offer{text-align:center;}
+  .offer .wrap{max-width:720px;}
+  .offer .kicker{
+    font-size:14px;
+    color:var(--muted-on-ink);
+    margin-bottom:18px;
+  }
+  .offer h2{
+    font-size:clamp(30px,4.6vw,48px);
+    color:var(--text-on-ink);
+  }
+  .offer .program{
+    margin-top:8px;
+    font-size:15px;
+    letter-spacing:0.02em;
+    color:var(--accent-bright);
+  }
+  .offer .price-block{justify-content:center;margin-top:44px;}
+  .offer .body{
+    margin-top:30px;
+    font-size:16.5px;
+    line-height:1.75;
+    color:var(--muted-on-ink);
+    max-width:52ch;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .offer .cta-row{display:flex;justify-content:center;}
+
+  /* ---------- how it works ---------- */
+  .how h2{
+    font-size:clamp(26px,3.4vw,38px);
+    max-width:14ch;
+  }
+  .how-grid{
+    margin-top:60px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:36px;
+  }
+  .how-item .num{
+    font-family:'Fraunces',serif;
+    font-size:15px;
+    color:var(--accent);
+  }
+  .how-item h4{
+    margin-top:12px;
+    font-size:18px;
+    font-weight:500;
+    font-family:'Fraunces',serif;
+  }
+  .how-item p{
+    margin-top:8px;
+    font-size:14.5px;
+    color:var(--muted);
+    line-height:1.6;
+  }
+  .flow{
+    margin-top:64px;
+    padding-top:36px;
+    border-top:1px solid var(--line);
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:10px;
+    font-size:13.5px;
+    color:var(--muted);
+    letter-spacing:0.02em;
+  }
+  .flow .sep{color:var(--accent);}
+
+  /* ---------- final cta ---------- */
+  .final{text-align:center;}
+  .final .wrap{max-width:680px;}
+  .final h2{
+    font-size:clamp(28px,4.2vw,44px);
+    color:var(--text-on-ink);
+    line-height:1.22;
+  }
+  .final .body{
+    margin-top:26px;
+    font-size:17px;
+    line-height:1.75;
+    color:var(--muted-on-ink);
+  }
+  .final .price-block{justify-content:center;margin-top:46px;}
+  .final .price-meta{text-align:center;}
+  .final .cta-row{display:flex;justify-content:center;}
 
   footer{
-    padding:30px 0 130px;
-    text-align:left;
-    font-size:12px;
-    color:var(--bone-faint);
+    padding:44px 0 120px;
+    text-align:center;
+    font-size:13px;
+    color:var(--muted-on-ink);
   }
 
   /* ---------- sticky mobile cta ---------- */
   .sticky-cta{
     position:fixed;
-    left:0; right:0; bottom:0;
-    background:rgba(11,10,8,0.92);
-    backdrop-filter:blur(10px);
-    border-top:1px solid var(--hair);
-    padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+    left:0;right:0;bottom:0;
     z-index:50;
-    transform:translateY(120%);
-    transition:transform 0.35s ease;
+    background:var(--ink);
+    border-top:1px solid var(--line-ink);
+    padding:12px 18px;
+    display:none;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+    transform:translateY(100%);
+    transition:transform .3s ease;
   }
   .sticky-cta.show{transform:translateY(0);}
-  .sticky-cta .cta{padding:15px 18px; font-size:14.5px;}
+  .sticky-cta .price{
+    font-family:'Fraunces',serif;
+    color:var(--text-on-ink);
+    font-size:16px;
+  }
+  .sticky-cta .price small{
+    display:block;
+    font-family:'Inter',sans-serif;
+    font-size:11px;
+    color:var(--muted-on-ink);
+  }
+  .sticky-cta .cta{padding:12px 20px;font-size:14px;white-space:nowrap;}
 
-  @media (min-width:760px){
-    .wrap, .offer .wrap{max-width:760px;}
-    .hero h1{max-width:16ch;}
-    .fit-grid{flex-direction:row; gap:56px;}
-    .fit-col{flex:1;}
-    .offer-compare{align-items:baseline;}
+  @media (max-width:880px){
+    section{padding:76px 0;}
+    .bridge{padding:76px 0;}
+    .bridge .grid{grid-template-columns:1fr;gap:24px;}
+    .compare .split{grid-template-columns:1fr;gap:36px;}
+    .compare .rule{display:none;}
+    .compare .split{margin-top:44px;}
+    .outcomes .list{grid-template-columns:1fr;}
+    .o-item:nth-last-child(2){border-bottom:none;}
+    .how-grid{grid-template-columns:1fr 1fr;gap:32px 24px;}
+    .p-item{grid-template-columns:56px 1fr;gap:20px;}
+    .sticky-cta{display:flex;}
+    footer{padding-bottom:110px;}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 20px;}
+    .how-grid{grid-template-columns:1fr;}
+    .price-block .now{font-size:34px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important; scroll-behavior:auto !important;}
   }
 </style>
 </head>
 <body>
 
-<div class="topbar">
-  <div class="mark"><b>AGI</b> — Artist Growth Intensive</div>
-  <div class="clock" id="topClock">Offer closes in <span id="clockVal">24:00:00</span></div>
+<div class="on-ink">
+  <div class="topbar">
+    <div class="mark">Fineboy Producer <span>Private session</span></div>
+  </div>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="note">For the artist who just finished the 44-minute session</p>
+      <h1>I'll look at your music career <em>and tell you what I'd do next.</em></h1>
+      <p class="sub">AGI is a private, personalized strategy intensive. I go through your current career — the music, the releases, the promotion, the platforms — and help you build a clear direction from here.</p>
+
+      <div class="price-block">
+        <span class="now">₦99,700</span>
+        <span class="was">₦1,300,000</span>
+      </div>
+      <p class="price-meta">24-hour offer<span class="dot">·</span>Only 10 artists</p>
+
+      <div class="cta-row">
+        <a href="#offer" class="cta" id="hero-cta">Work with me — ₦99,700</a>
+        <p class="cta-micro">Pay once. Book your strategy call immediately after.</p>
+      </div>
+    </div>
+  </section>
 </div>
 
-<header class="hero wrap">
-  <h1>I'll look at your music career and tell you <em>what I'd do next.</em></h1>
-  <p class="sub">A personalized strategy for your career — your artist identity, your positioning, your growth plan, and how you actually execute it.</p>
-
-  <div class="price-block">
-    <div class="price-row">
-      <span class="price-old">₦1,300,000</span>
-      <span class="price-note">regular value</span>
-    </div>
-    <div class="price-new">₦99,700</div>
-    <div class="price-note">24-hour AGI offer</div>
-  </div>
-
-  <a href="https://paystack.shop/pay/8-3yizk9hs" class="cta">Secure my AGI spot →</a>
-  <p class="cta-note">After payment, you'll book your strategy call immediately.</p>
-</header>
-
-<section class="wrap">
-  <p class="kicker">The problem</p>
-  <h2>Your career doesn't need more advice. It needs a strategy.</h2>
-  <p class="lede">Most artists aren't short on information. You've watched the videos, read the threads, tried the tips. What's missing isn't more content — it's someone looking at your specific situation and telling you what actually applies to you.</p>
-
-  <div class="pillar">
-    <div class="pillar-top"><span class="pillar-name">Artist identity</span><span class="pillar-num">i</span></div>
-    <p>Know who you are as an artist, what makes you different, and what you should be known for.</p>
-  </div>
-  <div class="pillar">
-    <div class="pillar-top"><span class="pillar-name">Positioning</span><span class="pillar-num">ii</span></div>
-    <p>Figure out where you fit, who you're trying to reach, and how your music should be presented to them.</p>
-  </div>
-  <div class="pillar">
-    <div class="pillar-top"><span class="pillar-name">Personalized strategy</span><span class="pillar-num">iii</span></div>
-    <p>A growth plan built around your actual resources, strengths, goals and situation — not a template.</p>
-  </div>
-  <div class="pillar">
-    <div class="pillar-top"><span class="pillar-name">Implementation</span><span class="pillar-num">iv</span></div>
-    <p>You leave with the strategy in motion, not another plan that sits in your notes app.</p>
-  </div>
-</section>
-
-<section class="wrap">
-  <p class="kicker">How it works</p>
-  <h2>Simple, in five steps.</h2>
-
-  <div class="step">
-    <span class="step-num">01</span>
-    <div class="step-body"><h3>Secure your spot</h3><p>Pay ₦99,700 to join AGI.</p></div>
-  </div>
-  <div class="step">
-    <span class="step-num">02</span>
-    <div class="step-body"><h3>Book your call</h3><p>Immediately after payment, choose a time for your strategy session.</p></div>
-  </div>
-  <div class="step">
-    <span class="step-num">03</span>
-    <div class="step-body"><h3>We dive into your career</h3><p>I'll look at your current situation, goals, music, positioning and what's getting in the way.</p></div>
-  </div>
-  <div class="step">
-    <span class="step-num">04</span>
-    <div class="step-body"><h3>Build your strategy</h3><p>We create a personalized direction for your next stage of growth.</p></div>
-  </div>
-  <div class="step">
-    <span class="step-num">05</span>
-    <div class="step-body"><h3>Implement</h3><p>You don't just leave with a strategy — you get guidance putting it into action.</p></div>
-  </div>
-</section>
-
-<section class="wrap">
-  <p class="kicker">Who this is for</p>
-  <h2>AGI is for artists ready to take their career seriously.</h2>
-
-  <div class="fit-grid">
-    <div class="fit-col yes">
-      <div class="fit-label">This is you if</div>
-      <ul class="fit-list">
-        <li>You have music you're confident in.</li>
-        <li>You want a real career, not just more releases.</li>
-        <li>You're doing things but lack a clear direction.</li>
-        <li>You're not sure how to position yourself.</li>
-        <li>You're tired of generic music industry advice.</li>
-        <li>You're ready to invest in clarity and strategy.</li>
-        <li>You're willing to actually execute.</li>
-      </ul>
-    </div>
-    <div class="fit-col no">
-      <div class="fit-label">Not for you if</div>
-      <ul class="fit-list">
-        <li>You're looking for overnight fame.</li>
-        <li>You want someone else to do everything for you.</li>
-        <li>You're not willing to implement.</li>
-        <li>Music is purely a hobby for you right now.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="offer" id="checkout">
+<section class="bridge">
   <div class="wrap">
-    <p class="kicker">The offer</p>
-    <h2>Stop guessing. Start with a strategy.</h2>
-
-    <div class="offer-compare">
-      <div class="col">
-        <div class="col-label">Regular value</div>
-        <div class="col-value old">₦1,300,000</div>
-      </div>
-      <div class="col">
-        <div class="col-label">24-hour AGI offer</div>
-        <div class="col-value new">₦99,700</div>
+    <div class="grid">
+      <div class="label">01</div>
+      <div>
+        <h2>Don't let this become another video you watched and forgot.</h2>
+        <div class="body">
+          <p>You understand now why strategy matters. Why random promotion doesn't move a career forward. Why your identity as an artist has to be clear before anything else works.</p>
+          <p>But knowing what should happen isn't the same as knowing what you should do next — with your music, your budget, your next release.</p>
+        </div>
+        <p class="pull">That's the part I can't teach in a video. It only happens when I sit down with your career specifically.</p>
       </div>
     </div>
-
-    <p class="offer-window">Available for the next <span id="clockVal2">24:00:00</span>.</p>
-
-    <a href="https://paystack.shop/pay/8-3yizk9hs" class="cta">Secure my AGI spot →</a>
-    <p class="cta-note">After payment, you'll book your strategy call immediately.</p>
   </div>
 </section>
 
-<section class="final wrap">
-  <p class="kicker">Last word</p>
-  <h2>Your next move should be strategic.</h2>
-  <p>You already know you want more from your music career.</p>
-  <p>Now let's figure out exactly what that next move should be.</p>
-  <a href="https://paystack.shop/pay/8-3yizk9hs" class="cta">Start AGI — ₦99,700 →</a>
-  <p class="cta-note">24-hour offer. After payment, book your strategy call.</p>
+<section class="compare on-ink">
+  <div class="wrap">
+    <h2>This isn't another course.</h2>
+    <p class="intro">You already have the information — from the session, and from what's freely available anywhere else. AGI isn't more of that. It's what happens after you have it.</p>
+
+    <div class="split">
+      <div class="col dim">
+        <div class="col-label">What you already have</div>
+        <h3>Information</h3>
+        <p>The framework. The reasoning. The what-and-why. You watched it. It's yours now, and it doesn't disappear.</p>
+      </div>
+      <div class="rule"></div>
+      <div class="col strong">
+        <div class="col-label">What AGI is</div>
+        <h3>Personalized implementation</h3>
+        <p>I go through your career specifically — your music, your positioning, your platforms — and work with you to apply the strategy to what you're actually building.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<footer class="wrap">
-  AGI — Artist Growth Intensive. A personalized strategy program for independent artists.
-</footer>
+<section class="process">
+  <div class="wrap">
+    <h2>Let's look at your career.</h2>
 
-<div class="sticky-cta" id="stickyCta">
-  <a href="https://paystack.shop/pay/8-3yizk9hs" class="cta">Secure AGI — ₦99,700 →</a>
+    <div class="process-list">
+      <div class="p-item">
+        <div class="num">01</div>
+        <div>
+          <h3>Deep dive</h3>
+          <p class="desc">We look at where you currently are — your music, your releases, your promotion, your social media, your streaming profiles, your audience. What's working, and what's not.</p>
+        </div>
+      </div>
+      <div class="p-item">
+        <div class="num">02</div>
+        <div>
+          <h3>Define your artist identity</h3>
+          <p class="desc">Who you are as an artist. What makes you different. What your music represents, who it's for, and what people should associate with you.</p>
+        </div>
+      </div>
+      <div class="p-item">
+        <div class="num">03</div>
+        <div>
+          <h3>Build your strategy</h3>
+          <p class="desc">We turn those answers into a plan — what to focus on, where your limited time and money should go, what to stop doing, and what comes next.</p>
+        </div>
+      </div>
+      <div class="p-item">
+        <div class="num">04</div>
+        <div>
+          <h3>Implement</h3>
+          <p class="desc">You don't leave with a document. I guide you on how to actually execute it, so you're working from direction instead of guessing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="outcomes on-ink">
+  <div class="wrap">
+    <h2>You won't leave with more information. You'll leave with direction.</h2>
+    <div class="list">
+      <div class="o-item">A clearer artist identity</div>
+      <div class="o-item">A personalized growth strategy</div>
+      <div class="o-item">A clear read on your current position</div>
+      <div class="o-item">What's working and what's wasting your time or money</div>
+      <div class="o-item">Priorities for your next moves</div>
+      <div class="o-item">A more focused approach to promotion</div>
+      <div class="o-item">Guidance on implementation</div>
+      <div class="o-item">Direct strategic access to me</div>
+    </div>
+  </div>
+</section>
+
+<section class="who">
+  <div class="wrap">
+    <h2>AGI is for the artist who's ready to stop guessing.</h2>
+    <div class="body">
+      <p class="line">You're releasing music but don't have a clear direction.</p>
+      <p class="line">You're spending on promotion but you're not sure what's actually working.</p>
+      <p class="line">You're doing a lot, but you couldn't confidently explain your strategy if someone asked.</p>
+      <p class="line">You know you have potential — your career just isn't moving the way you want it to.</p>
+    </div>
+    <p class="close">You don't need another motivational video. You need someone to look at your career and help you figure out what to do next.</p>
+  </div>
+</section>
+
+<section class="offer on-ink" id="offer">
+  <div class="wrap">
+    <p class="kicker">Work with me directly</p>
+    <h2>AGI</h2>
+    <p class="program">Artist Growth Intensive</p>
+
+    <div class="price-block">
+      <span class="now">₦99,700</span>
+      <span class="was">₦1,300,000</span>
+    </div>
+    <p class="price-meta">24 hours only<span class="dot">·</span>10 artists</p>
+
+    <p class="body">I normally charge ₦1.3M to work personally with an artist on their strategy. For this offer, I'm opening 10 spots at ₦99,700 — limited because I put the time and attention into each artist myself. This isn't a mass program. It's direct access to me.</p>
+
+    <div class="cta-row">
+      <a href="#" class="cta" id="offer-cta">Secure my AGI spot — ₦99,700</a>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <div class="how-grid">
+      <div class="how-item">
+        <div class="num">01</div>
+        <h4>Pay ₦99,700</h4>
+        <p>Secure your AGI spot.</p>
+      </div>
+      <div class="how-item">
+        <div class="num">02</div>
+        <h4>Book your call</h4>
+        <p>Immediately after payment, book your strategy call.</p>
+      </div>
+      <div class="how-item">
+        <div class="num">03</div>
+        <h4>We deep-dive</h4>
+        <p>Your music, positioning, promotion, platforms, and current strategy.</p>
+      </div>
+      <div class="how-item">
+        <div class="num">04</div>
+        <h4>Build your plan</h4>
+        <p>You leave with personalized direction and guidance on implementation.</p>
+      </div>
+    </div>
+    <div class="flow">
+      <span>Pay</span><span class="sep">→</span>
+      <span>Book</span><span class="sep">→</span>
+      <span>Deep dive</span><span class="sep">→</span>
+      <span>Build</span><span class="sep">→</span>
+      <span>Implement</span>
+    </div>
+  </div>
+</section>
+
+<section class="final on-ink">
+  <div class="wrap">
+    <h2>You know strategy matters. Now let's apply it to your career.</h2>
+    <p class="body">You already watched the session. You already have the information. The next step is deciding whether you keep figuring it out alone — or sit down with someone who can look at your career and help you map out what comes next.</p>
+
+    <div class="price-block">
+      <span class="now">₦99,700</span>
+    </div>
+    <p class="price-meta">Only 10 artists</p>
+
+    <div class="cta-row">
+      <a href="#" class="cta" id="final-cta">Work with me — ₦99,700</a>
+    </div>
+    <p class="cta-micro" style="text-align:center;">After payment, you'll immediately be able to book your strategy call.</p>
+  </div>
+  <footer>Fineboy Producer — Artist Growth Intensive</footer>
+</section>
+
+<div class="sticky-cta" id="sticky-cta">
+  <div class="price">₦99,700 <small>Only 10 spots · 24 hours</small></div>
+  <a href="#offer" class="cta">Secure spot</a>
 </div>
 
 <script>
-  // 24-hour countdown, session-scoped
-  var deadline = Date.now() + 24 * 60 * 60 * 1000;
-  var clockEls = [document.getElementById('clockVal'), document.getElementById('clockVal2')];
+  // ---- EDIT THIS: replace '#' hrefs above with your real payment link ----
+  const PAYMENT_LINK = "https://paystack.shop/pay/8-3yizk9hs";
+  document.querySelectorAll('#offer-cta, #final-cta').forEach(el => {
+    if (PAYMENT_LINK !== "#") el.href = PAYMENT_LINK;
+  });
 
-  function pad(n){ return String(n).padStart(2,'0'); }
-
-  function tick(){
-    var remaining = deadline - Date.now();
-    if(remaining < 0) remaining = 0;
-    var h = Math.floor(remaining / 3600000);
-    var m = Math.floor((remaining % 3600000) / 60000);
-    var s = Math.floor((remaining % 60000) / 1000);
-    var text = pad(h) + ':' + pad(m) + ':' + pad(s);
-    clockEls.forEach(function(el){ if(el) el.textContent = text; });
+  // sticky mobile cta after hero
+  const sticky = document.getElementById('sticky-cta');
+  const hero = document.querySelector('.hero');
+  if (sticky && hero){
+    const io = new IntersectionObserver(([entry]) => {
+      sticky.classList.toggle('show', !entry.isIntersecting);
+    }, { threshold: 0 });
+    io.observe(hero);
   }
-  tick();
-  setInterval(tick, 1000);
-
-  // sticky mobile CTA — appears after hero, hides near footer CTA
-  var sticky = document.getElementById('stickyCta');
-  var hero = document.querySelector('.hero');
-  var finalSection = document.querySelector('.final');
-
-  function onScroll(){
-    var heroBottom = hero.getBoundingClientRect().bottom;
-    var finalTop = finalSection.getBoundingClientRect().top;
-    var vh = window.innerHeight;
-    if(heroBottom < 0 && finalTop > vh * 0.6){
-      sticky.classList.add('show');
-    } else {
-      sticky.classList.remove('show');
-    }
-  }
-  window.addEventListener('scroll', onScroll, {passive:true});
-  onScroll();
 </script>
 
 </body>
